@@ -9,7 +9,9 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        String inputPath = "src/main/resources/input5.txt";
+
+        /* You can change the input path to try other prepared input files*/
+        String inputPath = "src/main/resources/input.txt";
         String outputPath = "src/main/resources/output.txt";
 
         try (Scanner scannerMN = new Scanner(System.in);
