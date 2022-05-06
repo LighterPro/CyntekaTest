@@ -19,4 +19,6 @@ src/main/resources/input.txt
 2)src/main/resources/input2.txt
 3)src/main/resources/input3.txt
 
+Результат работы программы будет записан в файл src/main/resources/output.txt
+
 Также, для наглядности, программа печатает результат на экране.
