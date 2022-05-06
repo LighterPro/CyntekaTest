@@ -95,9 +95,9 @@ public class Main {
                 writer.println(s);
             }
 
-            System.out.println("\nThe program has been completed successfully.\n");
-            System.out.println("Results: \n");
+            System.out.println("\nResults: ");
             for (String s : result) {
+                System.out.print("   ");
                 System.out.println(s);
             }
             System.out.println("\nThe results are also written to the output file: " + outputPath);
