@@ -49,10 +49,10 @@ public class Main {
             List<Map.Entry<Coordinates, Float>> sortedDistancesList = new ArrayList<>(allDistancesMap.entrySet());
             sortedDistancesList.sort(Map.Entry.<Coordinates, Float>comparingByValue().reversed());
 
-            boolean[] alavailableN = new boolean[nSize];
-            boolean[] alavailableM = new boolean[mSize];
-            Arrays.fill(alavailableN, true);
-            Arrays.fill(alavailableM, true);
+            boolean[] availableStringsN = new boolean[nSize];
+            boolean[] availableStringsM = new boolean[mSize];
+            Arrays.fill(availableStringsN, true);
+            Arrays.fill(availableStringsM, true);
 
             Map<Integer, Integer> pairCoordinatesMap = new HashMap<>();
             int possiblePairs = Math.min(mSize, nSize);
@@ -64,12 +64,12 @@ public class Main {
                 Coordinates tmpCoord = entry.getKey();
                 int tmpN = tmpCoord.getNCoord();
                 int tmpM = tmpCoord.getMCoord();
-                if (!alavailableN[tmpN] | !alavailableM[tmpM]) {
+                if (!availableStringsN[tmpN] | !availableStringsM[tmpM]) {
                     continue;
                 }
                 pairCoordinatesMap.put(tmpN, tmpM);
-                alavailableN[tmpN] = false;
-                alavailableM[tmpM] = false;
+                availableStringsN[tmpN] = false;
+                availableStringsM[tmpM] = false;
                 foundedPairs++;
             }
 
@@ -84,8 +84,8 @@ public class Main {
             }
 
             if (mSize > nSize) {
-                for (int i = 0; i < alavailableM.length; i++) {
-                    if (alavailableM[i]) {
+                for (int i = 0; i < availableStringsM.length; i++) {
+                    if (availableStringsM[i]) {
                         result.add(listM.get(i) + ":?");
                     }
                 }
